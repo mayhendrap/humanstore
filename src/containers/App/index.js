@@ -21,21 +21,19 @@ export class App extends Component {
 
     render() {
         return (
-            <>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <Router>
-                    <Header />
-                    <Switch>
-                        <Route path="/" exact component={ProductLists} />
-                        <Route path="/product/:id" component={ProductDetails} />
-                        <ProtectRoute path="/register" component={Register} />
-                        <ProtectRoute path="/login" component={Login} />
-                        <Route path="/cart" component={ProductCart} />
-                    </Switch>
-                    </Router>
-                </ThemeProvider>
-            </>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Router>
+                <Header />
+                <Switch>
+                    <Route path="/" exact component={ProductLists} />
+                    <Route path="/product/:id" component={ProductDetails} />
+                    <ProtectRoute path="/register" component={Register} />
+                    <ProtectRoute path="/login" component={Login} />
+                    <Route path="/cart" component={ProductCart} />
+                </Switch>
+                </Router>
+            </ThemeProvider>
         )
     }
 }
