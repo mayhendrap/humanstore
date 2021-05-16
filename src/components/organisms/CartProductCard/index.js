@@ -4,7 +4,7 @@ import { AddBoxOutlined, DeleteOutlined, IndeterminateCheckBoxOutlined } from '@
 import useStyles from './style'
 import convertToRupiah from '../../../utils/convertToRupiah'
 import { useDispatch } from 'react-redux'
-import { addProductToCart, removeProductFromCart } from '../../../config/redux/actions'
+import { addProductToCart, reduceProductFromCart, removeProductFromCart } from '../../../config/redux/actions'
 import { Link } from 'react-router-dom'
 
 function CartProductCard({product}) {
@@ -16,10 +16,14 @@ function CartProductCard({product}) {
         addProductToCart(dispatch, product)
     }
     
-    const handleMinus = () => {
+    const handleMinus = (product) => {
         if (product.qty > 1) {
-            removeProductFromCart(dispatch, product)
+            reduceProductFromCart(dispatch, product)
         }
+    }
+    
+    const handleRemove = (product) => {
+        removeProductFromCart(dispatch, product)
     }
 
     return (
@@ -55,7 +59,7 @@ function CartProductCard({product}) {
                                     <AddBoxOutlined />
                                 </IconButton>
                                 <Divider orientation="vertical" flexItem className={classes.divider} />
-                                <IconButton>
+                                <IconButton onClick={() => handleRemove(product)}>
                                     <DeleteOutlined />
                                 </IconButton>
                             </div>

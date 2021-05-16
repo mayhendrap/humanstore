@@ -12,6 +12,12 @@ export const addProductToCart = (dispatch, productId) => {
     dispatch({ type: "SET_CART_TOTAL_PRICE"})
 }
 
+export const reduceProductFromCart = (dispatch, productId) => {
+    dispatch({ type: "REDUCE_PRODUCT_FROM_CART", payload: productId })
+    dispatch({ type: "SET_COUNT_CART"})
+    dispatch({ type: "SET_CART_TOTAL_PRICE"})
+}
+
 export const removeProductFromCart = (dispatch, productId) => {
     dispatch({ type: "REMOVE_PRODUCT_FROM_CART", payload: productId })
     dispatch({ type: "SET_COUNT_CART"})
