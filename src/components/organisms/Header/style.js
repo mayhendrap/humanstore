@@ -5,10 +5,10 @@ const useStyles = makeStyles({
     appBar: {
         borderBottom: "1px solid #f5f5f5",
         backgroundColor: "#fff",
+        padding: "0.6rem 0"
     },
     wrapperHeader: {
         display: "flex",
-        flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center"
     },

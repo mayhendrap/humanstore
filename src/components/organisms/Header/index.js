@@ -35,7 +35,6 @@ function Header() {
     return (
         <>
             <AppBar elevation={0} position="fixed" className={classes.appBar}>
-                <Toolbar>
                     <Container className={classes.wrapperHeader}>
                         <Link to="/" className={classes.storeName}>
                             <Typography variant="h6">
@@ -95,7 +94,6 @@ function Header() {
                             }
                         </div>
                     </Container>
-                </Toolbar>
             </AppBar>
             <Toolbar />
         </>
