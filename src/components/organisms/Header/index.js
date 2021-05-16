@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import useStyles from './style'
+import './style.css'
 
 import { AppBar, Button, Container, Divider, IconButton, Menu, MenuItem, Toolbar, Typography } from '@material-ui/core'
 import { AccountCircleOutlined, ShoppingBasketOutlined } from '@material-ui/icons'
@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Header() {
-    const classes = useStyles()
     const dispatch = useDispatch()
     const { isLogin, productsQty } = useSelector((state) => state)
     let user = []
@@ -34,26 +33,26 @@ function Header() {
     
     return (
         <>
-            <AppBar elevation={0} position="fixed" className={classes.appBar}>
-                    <Container className={classes.wrapperHeader}>
-                        <Link to="/" className={classes.storeName}>
+            <AppBar elevation={0} position="fixed" className="appBar">
+                    <Container className="wrapperHeader">
+                        <Link to="/" className="storeName">
                             <Typography variant="h6">
                                 Humanstore
                             </Typography>
                         </Link>
-                        <div className={classes.rightHeader}>
+                        <div className="rightHeader">
                             {
                                 isLogin || user.isLogin ?
                                 <>
-                                    <Link to="/cart" className={classes.cartWrapper}>
-                                        <IconButton className={classes.cartLogo}>
+                                    <Link to="/cart" className="cartWrapper">
+                                        <IconButton className="cartLogo">
                                             <ShoppingBasketOutlined />
                                         </IconButton>
-                                        <Typography variant="caption" className={classes.countCart}>{productsQty}</Typography>
+                                        <Typography variant="caption" className="countCart">{productsQty}</Typography>
                                     </Link>
                                     <Divider orientation="vertical" flexItem />
-                                    <div className={classes.accountWrapper}>
-                                        <Typography variant="caption" className={classes.accountName}>
+                                    <div className="accountWrapper">
+                                        <Typography variant="caption" className="accountName">
                                             {user.email}
                                         </Typography>
                                         <IconButton
@@ -61,7 +60,7 @@ function Header() {
                                             aria-haspopup="true"
                                             onClick={handleMenu}
                                         >
-                                            <AccountCircleOutlined className={classes.accountIcon}/>
+                                            <AccountCircleOutlined className="accountIcon"/>
                                         </IconButton>
                                         <Menu
                                             id="menu-appbar"
@@ -69,7 +68,7 @@ function Header() {
                                             keepMounted
                                             open={Boolean(anchorEl)}
                                             onClose={handleClose}
-                                            className={classes.menuDropdown}
+                                            className="menuDropdown"
                                             elevation={1}
                                         >
                                             <MenuItem onClick={handleLogout}>
@@ -80,12 +79,12 @@ function Header() {
                                 </>
                                 :
                                 <>
-                                    <Link to={`/login`} className={classes.auth}>
+                                    <Link to={`/login`} className="auth">
                                         <Button variant="outlined" size="small">
                                             Masuk
                                         </Button>
                                     </Link>
-                                    <Link to={`/register`} className={classes.auth}>
+                                    <Link to={`/register`} className="auth">
                                         <Button variant="outlined" size="small">
                                             Daftar
                                         </Button>

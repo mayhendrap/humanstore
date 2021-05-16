@@ -1,0 +1,65 @@
+.appBar {
+    border-bottom: 1px solid #f5f5f5;
+    background-color: #fff;
+    padding: 0.6rem 0
+}
+
+.wrapperHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.storeName {
+    text-decoration: none;
+    color: #424242
+}
+
+.rightHeader {
+    display: flex;
+    align-items: center
+}
+
+.cartWrapper {
+    display: flex;
+    position: relative;
+    margin-right: 1rem
+}
+
+.cartLogo {
+    color: #424242
+}
+
+.countCart {
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #616161;
+    color: #fff;
+    padding: 0.5px 6px;
+    border-radius: 70%;
+}
+
+.accountIcon {
+    color: #424242;
+}
+
+.accountWrapper {
+    margin-left: 0.6rem;
+}
+
+.accountName {
+    color: #424242;
+}
+
+.auth {
+    text-decoration: none;
+    color: #424242;
+    margin-left: 0.5rem;
+}
+
+.menuDropdown .MuiMenu-paper {
+    border-radius: 0;
+    margin-top: 40px;
+}
